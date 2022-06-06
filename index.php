@@ -12,6 +12,8 @@ $textlength = strlen( $testo);
 
 // Viene selezionato in pagina tramite URL
 $badword = $_GET['badword'];
+
+$testoCensurato = str_replace($badword, '*** ', $testo);
 ?>
 
 <!DOCTYPE html>
@@ -42,5 +44,11 @@ $badword = $_GET['badword'];
         <br>
         <i><?php echo str_replace($badword, '*** ', $testo) ?></i>
     </p>
+    <p>
+        <strong>Ed è lungo</strong> 
+        <i> <?php echo strlen($testoCensurato) ?></i>
+        <strong>caratteri</strong>
+    </p>
+    
 </body>
 </html>
